@@ -31,9 +31,9 @@
       <p class="tagline">Now on your <em>old</em> phone too.</p>
       <p class="intro">A free LocalSend-compatible app for Android 2.3 to 4.4. Send photos, files and text to
         your PC, Mac or new phone over Wi-Fi. No internet, no account, no ARMv7 needed.</p>
-      <a class="btn-download" href="https://github.com/mdukasa/localsend-legacy/releases/latest">
+      <a class="btn-download" id="download" href="https://github.com/mdukasa/localsend-legacy/releases/latest">
         <span class="big">Download APK</span>
-        <span class="small">Version 0.3.0 &middot; free &middot; Android 2.3+</span>
+        <span class="small">Version <span id="version">0.3.0</span> &middot; free &middot; Android 2.3+</span>
       </a>
       <a class="btn-plain" href="https://github.com/mdukasa/localsend-legacy">View source</a>
     </div>
@@ -140,5 +140,29 @@
   </div>
 </div>
 
+<script>
+// Show the latest release's version and link straight to its APK.
+// The text above is the fallback if GitHub can't be reached.
+(function () {
+  try {
+    var x = new XMLHttpRequest();
+    x.open('GET', 'https://api.github.com/repos/mdukasa/localsend-legacy/releases/latest', true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4 || x.status !== 200) return;
+      try {
+        var r = JSON.parse(x.responseText), i;
+        if (r.tag_name) document.getElementById('version').innerHTML = r.tag_name.replace(/^v/, '');
+        for (i = 0; r.assets && i < r.assets.length; i++) {
+          if (/\.apk$/.test(r.assets[i].name)) {
+            document.getElementById('download').href = r.assets[i].browser_download_url;
+            break;
+          }
+        }
+      } catch (e) {}
+    };
+    x.send();
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
