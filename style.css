@@ -58,10 +58,10 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   text-shadow: 0 1px 1px rgba(0,0,0,.3); margin: 4px 0 14px;
 }
 #hero .intro { color: #e3f6ea; margin-bottom: 26px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
-#hero-shot { position: absolute; right: 0; bottom: 0; width: 500px; }
+#hero-shot { position: absolute; right: 0; bottom: 46px; width: 500px; }
 #hero-shot img {
   width: 500px; height: auto; display: block;
-  -webkit-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0;
+  -webkit-border-radius: 8px; border-radius: 8px;
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35); box-shadow: 0 0 20px rgba(0,0,0,.35);
 }
 
@@ -201,6 +201,7 @@ dd { color: #555; }
   .wrap { width: auto; padding: 0 16px; }
   #hero-text, #hero-shot { float: none; position: static; width: auto; }
   #hero-text { padding: 0 0 30px; }
+  #hero-shot { padding-bottom: 30px; }
   #hero-shot img { width: 100%; }
   .stat { width: 50%; border-right: 0; }
   .feature, .steps li { width: 47%; margin-right: 6%; margin-bottom: 18px; }
