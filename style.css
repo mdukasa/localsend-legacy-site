@@ -194,10 +194,11 @@ dd { color: #555; }
 #footer b { color: #ddd; }
 #footer a { color: #8fd9ad; }
 #footer p { margin-bottom: 6px; }
-#footer .badge {
-  display: inline-block; margin-top: 8px; padding: 2px 8px; font: 10px Verdana, sans-serif; color: #777;
-  border: 1px solid #444; background: #222;
-}
+#footer .buttons { margin: 14px auto 4px; max-width: 490px; line-height: 0; }
+#footer .buttons a, #footer .buttons img { display: inline-block; }
+#footer .buttons img { margin: 2px; border: 0; image-rendering: -moz-crisp-edges; image-rendering: pixelated; }
+#footer .buttons a:hover img { opacity: .85; }
+#footer .credits { font-size: 10px; color: #666; }
 
 /* phones (the Wildfire S is 320x480) */
 @media screen and (max-width: 960px) {
