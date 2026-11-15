@@ -48,7 +48,7 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   padding: 44px 0 0;
   overflow: hidden;
 }
-#hero-text { float: left; width: 410px; padding-top: 18px; }
+#hero-text { float: left; width: 410px; padding: 10px 0 46px; }
 #hero h1 {
   font: bold 35px/1.15 "Trebuchet MS", "Lucida Grande", "Droid Sans", sans-serif;
   letter-spacing: -1px; text-shadow: 0 2px 2px rgba(0,0,0,.35);
@@ -58,7 +58,7 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   text-shadow: 0 1px 1px rgba(0,0,0,.3); margin: 4px 0 14px;
 }
 #hero .intro { color: #e3f6ea; margin-bottom: 26px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
-#hero-shot { float: right; width: 500px; padding-bottom: 0; }
+#hero-shot { position: absolute; right: 0; bottom: 0; width: 500px; }
 #hero-shot img {
   width: 500px; height: auto; display: block;
   -webkit-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0;
@@ -67,7 +67,7 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
 
 /* glossy download button */
 .btn-download {
-  display: inline-block; vertical-align: middle; padding: 10px 26px 9px 58px; position: relative;
+  display: inline-block; vertical-align: middle; padding: 10px 26px 9px 64px; position: relative;
   color: #3a2500; text-decoration: none; text-shadow: 0 1px 0 rgba(255,255,255,.5);
   background: #f7c23a;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffe48a), color-stop(.5, #fcc93f), color-stop(.51, #f5b51c), to(#f2a90c));
@@ -78,10 +78,9 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 2px 4px rgba(0,0,0,.35);
 }
 .btn-download:before {
-  content: "\2193"; position: absolute; left: 16px; top: 9px; width: 30px; height: 30px;
-  font: bold 22px/30px Arial, sans-serif; text-align: center; color: #fff; text-shadow: 0 -1px 0 #8a5a00;
-  background: #c98a00; -webkit-border-radius: 15px; border-radius: 15px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.4); box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+  content: ""; position: absolute; left: 16px; top: 50%; margin-top: -19px; width: 36px; height: 36px;
+  background: url(img/download.png) no-repeat 0 0;
+  -webkit-background-size: 36px 36px; background-size: 36px 36px;
 }
 .btn-download:hover { color: #3a2500; background: #ffd35a; background: linear-gradient(#fff0b0, #ffd45a 50%, #f9c030 51%, #f5b31c); }
 .btn-download:active { -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.3); box-shadow: inset 0 2px 4px rgba(0,0,0,.3); }
@@ -200,7 +199,7 @@ dd { color: #555; }
 /* phones (the Wildfire S is 320x480) */
 @media screen and (max-width: 960px) {
   .wrap { width: auto; padding: 0 16px; }
-  #hero-text, #hero-shot { float: none; width: auto; }
+  #hero-text, #hero-shot { float: none; position: static; width: auto; }
   #hero-text { padding: 0 0 30px; }
   #hero-shot img { width: 100%; }
   .stat { width: 50%; border-right: 0; }
