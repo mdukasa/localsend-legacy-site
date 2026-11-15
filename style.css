@@ -58,8 +58,8 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   text-shadow: 0 1px 1px rgba(0,0,0,.3); margin: 4px 0 14px;
 }
 #hero .intro { color: #e3f6ea; margin-bottom: 26px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
-#hero-phone { position: absolute; right: 110px; bottom: -130px; width: 300px; }
-#hero-phone img { display: block; width: 300px; height: auto; }
+#hero-phone { position: absolute; right: 0; bottom: -60px; width: 400px; }
+#hero-phone img { display: block; width: 400px; height: auto; }
 
 /* glossy download button */
 .btn-download {
@@ -196,7 +196,7 @@ dd { color: #555; }
 @media screen and (max-width: 960px) {
   .wrap { width: auto; padding: 0 16px; }
   #hero-text { float: none; width: auto; }
-  #hero-phone { position: static; margin: 0 auto -110px; }
+  #hero-phone { position: static; margin: 0 auto -30px; }
   #hero-text { padding: 0 0 30px; }
   .stat { width: 50%; border-right: 0; }
   .feature, .steps li { width: 47%; margin-right: 6%; margin-bottom: 18px; }
@@ -207,7 +207,7 @@ dd { color: #555; }
   #nav { display: none; }
   #hero { padding-top: 26px; }
   #hero h1 { font-size: 30px; }
-  #hero-phone, #hero-phone img { width: 240px; }
+  #hero-phone, #hero-phone img { width: 100%; max-width: 360px; }
   #hero .tagline { font-size: 21px; }
   .btn-plain { margin: 12px 0 0; }
   .panel { padding: 18px 16px 20px; }
