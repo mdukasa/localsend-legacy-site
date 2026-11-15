@@ -159,11 +159,31 @@
       <a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="img/buttons/apache.png" width="88" height="31" alt="Apache License 2.0" title="Apache License 2.0"></a>
       <a href="https://source.android.com/docs/core/runtime"><img src="img/buttons/dalvik.png" width="88" height="31" alt="Powered by Dalvik" title="Powered by Dalvik"></a>
     </p>
+    <p class="counter" id="counter" style="display:none">You are visitor number <span class="digits" id="hits"></span></p>
     <p class="credits">HTML5 logo by W3C and Android robot by Google, both CC BY 3.0. Valid CSS button by W3C.</p>
   </div>
 </div>
 
 <script>
+// Hit counter: counts this page load (no cookies, nothing stored about you) and shows the total.
+(function () {
+  try {
+    var x = new XMLHttpRequest();
+    x.open('POST', '/api/hits', true);
+    x.onreadystatechange = function () {
+      if (x.readyState !== 4 || x.status !== 200) return;
+      try {
+        var n = String(JSON.parse(x.responseText).hits), html = '', i;
+        while (n.length < 6) n = '0' + n;
+        for (i = 0; i < n.length; i++) html += '<span>' + n.charAt(i) + '</span>';
+        document.getElementById('hits').innerHTML = html;
+        document.getElementById('counter').style.display = 'block';
+      } catch (e) {}
+    };
+    x.send();
+  } catch (e) {}
+})();
+
 // Show the latest release's version and link straight to its APK.
 // The text above is the fallback if GitHub can't be reached.
 (function () {
