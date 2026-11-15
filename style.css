@@ -58,11 +58,20 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
   text-shadow: 0 1px 1px rgba(0,0,0,.3); margin: 4px 0 14px;
 }
 #hero .intro { color: #e3f6ea; margin-bottom: 26px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
-#hero-shot { position: absolute; right: 0; bottom: 46px; width: 500px; }
-#hero-shot img {
-  width: 500px; height: auto; display: block;
-  -webkit-border-radius: 8px; border-radius: 8px;
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35); box-shadow: 0 0 20px rgba(0,0,0,.35);
+#hero-orb { position: absolute; right: 90px; top: 50%; margin-top: -170px; width: 300px; height: 300px; }
+#orb {
+  width: 280px; height: 280px; margin: 0 auto; position: relative; z-index: 1;
+  background: url(img/orb-sprite.png) no-repeat 0 0;
+  -webkit-border-radius: 50%; border-radius: 50%;
+  -webkit-box-shadow: 0 0 60px 10px rgba(0,30,15,.35), inset 0 0 70px rgba(0,30,15,.35);
+  box-shadow: 0 0 60px 10px rgba(0,30,15,.35), inset 0 0 70px rgba(0,30,15,.35);
+  -webkit-background-size: 500% 500%; background-size: 500% 500%;
+}
+/* soft shadow under the orb */
+#hero-orb:after {
+  content: ""; display: block; width: 200px; height: 24px; margin: 6px auto 0;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(rgba(0,0,0,.35)), to(rgba(0,0,0,0)));
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,0) 70%);
 }
 
 /* glossy download button */
@@ -199,10 +208,9 @@ dd { color: #555; }
 /* phones (the Wildfire S is 320x480) */
 @media screen and (max-width: 960px) {
   .wrap { width: auto; padding: 0 16px; }
-  #hero-text, #hero-shot { float: none; position: static; width: auto; }
+  #hero-text { float: none; width: auto; }
+  #hero-orb { position: static; margin: 0 auto 30px; width: auto; height: auto; }
   #hero-text { padding: 0 0 30px; }
-  #hero-shot { padding-bottom: 30px; }
-  #hero-shot img { width: 100%; }
   .stat { width: 50%; border-right: 0; }
   .feature, .steps li { width: 47%; margin-right: 6%; margin-bottom: 18px; }
   .feature:nth-child(2n), .steps li:nth-child(2n) { margin-right: 0; }
@@ -212,6 +220,7 @@ dd { color: #555; }
   #nav { display: none; }
   #hero { padding-top: 26px; }
   #hero h1 { font-size: 30px; }
+  #orb { width: 220px; height: 220px; }
   #hero .tagline { font-size: 21px; }
   .btn-plain { margin: 12px 0 0; }
   .panel { padding: 18px 16px 20px; }

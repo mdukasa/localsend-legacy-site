@@ -37,9 +37,7 @@
       </a>
       <a class="btn-plain" href="https://github.com/mdukasa/localsend-legacy">View source</a>
     </div>
-    <div id="hero-shot">
-      <img src="img/versions.jpg" width="975" height="570" alt="LocalSend Legacy running on Android 2.3, 4.1 and 4.4">
-    </div>
+    <div id="hero-orb"><div id="orb" role="img" aria-label="The spinning glass orb from LocalSend Legacy"></div></div>
   </div>
 </div>
 
@@ -93,6 +91,8 @@
 
   <div class="panel" id="screenshots">
     <h2>Screenshots</h2>
+    <p class="caption">Android 2.3, 4.1 and 4.4 side by side</p>
+    <img class="shot" src="img/versions.jpg" width="975" height="570" alt="LocalSend Legacy running on Android 2.3, 4.1 and 4.4">
     <p class="caption">Android 4.4 KitKat, Holo theme</p>
     <img class="shot" src="img/features.jpg" width="1310" height="570" alt="Choosing files, an incoming transfer, a received message and settings on Android 4.4">
     <p class="caption">Android 2.3 Gingerbread</p>
@@ -141,6 +141,16 @@
 </div>
 
 <script>
+// Spin the glass orb: 25 frames in a 5x5 sprite, one 36-degree turn per loop.
+(function () {
+  var orb = document.getElementById('orb'), f = 0;
+  if (!orb || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+  setInterval(function () {
+    f = (f + 1) % 25;
+    orb.style.backgroundPosition = (f % 5) * 25 + '% ' + Math.floor(f / 5) * 25 + '%';
+  }, 50);
+})();
+
 // Show the latest release's version and link straight to its APK.
 // The text above is the fallback if GitHub can't be reached.
 (function () {
