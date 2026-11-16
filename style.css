@@ -222,7 +222,7 @@ dd { color: #555; }
 @media screen and (max-width: 960px) {
   .wrap { width: auto; padding: 0 16px; }
   #hero-text { float: none; width: auto; }
-  #hero-phone { position: relative; margin: 0 auto -30px; }
+  #hero-phone { position: relative; bottom: 0; margin: 0 auto -30px; }
   #hero-orb { width: 120%; height: 0; padding-bottom: 120%; right: -10%; bottom: -13%; }
   #hero-text { padding: 0 0 30px; }
   .stat { width: 50%; border-right: 0; }
@@ -235,6 +235,8 @@ dd { color: #555; }
   #hero { padding-top: 26px; }
   #hero h1 { font-size: 30px; }
   #hero-phone, #hero-phone img { width: 100%; max-width: 360px; }
+  #hero-text { position: relative; z-index: 2; padding-bottom: 24px; }
+  #hero-phone { margin-bottom: -6px; }
   #hero .tagline { font-size: 21px; }
   .btn-plain { margin: 12px 0 0; }
   .panel { padding: 18px 16px 20px; }
