@@ -60,9 +60,13 @@ code { font: 12px Consolas, "Droid Sans Mono", monospace; background: #eef3f0; b
 #hero .intro { color: #e3f6ea; margin-bottom: 26px; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
 #hero-orb {
   position: absolute; right: -40px; bottom: -50px; width: 480px; height: 480px;
-  background: url(img/orb-white.png) no-repeat 0 0;
-  -webkit-background-size: 500% 500%; background-size: 500% 500%;
+  background: url(img/orb-white.png) no-repeat 50% 50%;
+  -webkit-background-size: 100% 100%; background-size: 100% 100%;
+  -webkit-animation: orb-spin 20s linear infinite; animation: orb-spin 20s linear infinite;
 }
+@-webkit-keyframes orb-spin { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
+@keyframes orb-spin { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #hero-orb { -webkit-animation: none; animation: none; } }
 #hero-phone { position: absolute; right: 0; bottom: -60px; width: 400px; }
 #hero-phone img { display: block; width: 400px; height: auto; position: relative; z-index: 1; }
 

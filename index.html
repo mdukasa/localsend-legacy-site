@@ -164,16 +164,6 @@
 </div>
 
 <script>
-// Spin the white glass orb behind the phones: 25 frames in a 5x5 sprite, one 36-degree turn per loop.
-(function () {
-  var orb = document.getElementById('hero-orb'), f = 0;
-  if (!orb || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
-  setInterval(function () {
-    f = (f + 1) % 25;
-    orb.style.backgroundPosition = (f % 5) * 25 + '% ' + Math.floor(f / 5) * 25 + '%';
-  }, 80);
-})();
-
 // Hit counter: counts this page load (no cookies, nothing stored about you) and shows the total.
 (function () {
   try {
