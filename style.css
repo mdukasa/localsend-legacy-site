@@ -224,7 +224,7 @@ dd { color: #555; }
   #hero-text { float: none; width: auto; }
   #hero-phone { position: relative; bottom: 0; margin: 0 auto -59px; }
   #hero-orb { width: 120%; height: 0; padding-bottom: 120%; right: -10%; bottom: -13%; }
-  #hero-text { padding: 0 0 30px; }
+  #hero-text { padding: 0 0 56px; }
   .stat { width: 50%; border-right: 0; }
   .feature, .steps li { width: 47%; margin-right: 6%; margin-bottom: 18px; }
   .feature:nth-child(2n), .steps li:nth-child(2n) { margin-right: 0; }
@@ -235,7 +235,7 @@ dd { color: #555; }
   #hero { padding-top: 26px; }
   #hero h1 { font-size: 30px; }
   #hero-phone, #hero-phone img { width: 100%; max-width: 360px; }
-  #hero-text { position: relative; z-index: 2; padding-bottom: 24px; }
+  #hero-text { position: relative; z-index: 2; padding-bottom: 52px; }
   #hero-phone { margin-bottom: -53px; margin-bottom: max(-14.77%, -53px); }
   #hero .tagline { font-size: 21px; }
   .btn-plain { margin: 12px 0 0; }
