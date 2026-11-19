@@ -1,0 +1,13 @@
+{
+  "name": "hero-template",
+  "private": true,
+  "type": "module",
+  "description": "Builds hero-nexus4.psd (smart-object screens) from the layers make_hero.py exports",
+  "scripts": {
+    "psd": "node make_psd.mjs"
+  },
+  "dependencies": {
+    "ag-psd": "^34.2.2",
+    "pngjs": "^7.0.0"
+  }
+}
